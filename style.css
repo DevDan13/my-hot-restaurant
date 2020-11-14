@@ -7,3 +7,9 @@ h3 {
 .jumboBody{
     text-align: center;
 }
+#current, #waiting {
+    width: 80%;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}

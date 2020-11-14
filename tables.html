@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Restaurants</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="jumbotron">
+            <h1>Hot Restaurant</h1>
+            <h3>Current Reservations and Waiting List</h3>
+            <hr>
+            <div class="jumboBody">
+                <a href="/add"><button class="btn btn-primary btn-lg"><span class="fa fa-plus"></span> Make
+                        Reservation</button></a>
+                <a href="./index.html"><button class="btn btn-lg"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                            class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
+                            <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        </svg></a></button>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                <div id="current" class="card">
+                    <div class="card-header">
+                        Current Reservations
+                    </div>
+                    <div class="card-body">
+                        <h5 id="currentTableNum" class="card-title">Table Number</h5>
+                        <div class="card-text">
+                            <p id="uniqueID"></p>
+                            <p id="name"></p>
+                            <p id="email"></p>
+                            <p id="phone"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col 12">
+                <div id="waiting" class="card">
+                    <div class="card-header">
+                        Waiting List
+                    </div>
+                    <div class="card-body">
+                        <h5 id="waitingTableNum" class="card-title">Table Number</h5>
+                        <div class="card-text">
+                            <p id="uniqueID"></p>
+                            <p id="name"></p>
+                            <p id="email"></p>
+                            <p id="phone"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $.get("/api/characters/" + searchedCharacter, function(data) {
+        console.log(data);
+        if (data) {
+            $("#uniqueID").show();
+            $("#name").text(data.name);
+            $("#number").text(data.number);
+            $("#email").text(data.email);
+            $("#uniqueID").text(data.id);
+        } else {
+            $("#name").text(
+            "The force is not strong with this one. Your character was not found.");
+            $("#stats").hide();
+        }
+        });
+    </script>
+</body>
+</html>

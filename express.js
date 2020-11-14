@@ -14,10 +14,10 @@ app.use(express.json());
 
 let currentCust = [
     {
-        id: "Gavin56",
-        name: "Gavin 'O'Brien O'Scott' O'Brien",
-        email: "TheOBriens@gmail.com",
-        phone: 555-555-5555
+        id: "GavinPS5",
+        name: "Scotty Connor McGavin O'Brien McCleod McKraken",
+        email: "HybridTheory@gmail.com",
+        phone: "201-420-6969"
     }
 ]
 
@@ -28,7 +28,7 @@ let waitingCust = [
         id: "D'Argenio",
         name: "Amanda 'Panda' D'Argernio",
         email: "AmandaPanda@gmail.com",
-        phone: 555-555-5555
+        phone: "555-555-5555"
     }
 ]
 
@@ -48,11 +48,26 @@ app.get("/tables",function(req, res){
 });
 
 
-//displays all reserved customers
+//displays all reserved customers in JSON
 app.get("/api/currentCust", function(req, res) {
     return res.json(currentCust);
-  });
+});
 
+//displays all reserved customers in JSON
+app.get("/api/waitingCust", function(req, res) {
+    return res.json(waitingCust);
+});
+
+
+//POST requests
+app.post("/api/customers", function(req, res){
+    //
+    
+    let newCustomer = req.body;
+
+});
+
+//server listening on port 3001
 app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:" + PORT);
 });
