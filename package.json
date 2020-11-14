@@ -1,0 +1,23 @@
+{
+  "name": "my-hot-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevDan13/my-hot-restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevDan13/my-hot-restaurant/issues"
+  },
+  "homepage": "https://github.com/DevDan13/my-hot-restaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
